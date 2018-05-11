@@ -36,12 +36,6 @@ ssh:
     - watch:
       - file: /etc/ssh/sshd_config
 
-# Start firewall
-
-start_firewall:
-  cmd.run:
-    - name: sudo ufw enable
-
 # Restart firewall if changes are made to the config file
 
 firewall_restart:
@@ -50,4 +44,11 @@ firewall_restart:
     - watch:
       - file: /etc/ufw/user.rules
       - file: /etc/ufw/user6.rules
+
+# Start firewall
+
+start_firewall:
+  cmd.run:
+    - name: sudo ufw enable
+
 
