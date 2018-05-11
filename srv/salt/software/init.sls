@@ -40,7 +40,7 @@ restart_apache2:
 
 # Restarting Apache
 
-restart_apache2:
+service_apache2:
   cmd.run:
     - name: 'sudo systemctl restart apache2.service'
 
