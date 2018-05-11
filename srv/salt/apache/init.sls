@@ -11,7 +11,7 @@ install_apache:
 
 /var/www/html/index.html:
   file.managed:
-    - source: salt://apache/default.html
+    - source: salt://apache/index.php
 
 # Enable user directories and sites
 
