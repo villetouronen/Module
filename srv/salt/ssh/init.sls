@@ -28,6 +28,12 @@ install_ssh:
     - context:
       port: 1337
 
+# Start firewall
+
+start_firewall:
+  cmd.run:
+    - name: sudo ufw enable
+
 # Restart SSH if changes are made to the config file
 
 ssh:
@@ -44,11 +50,4 @@ firewall_restart:
     - watch:
       - file: /etc/ufw/user.rules
       - file: /etc/ufw/user6.rules
-
-# Start firewall
-
-start_firewall:
-  cmd.run:
-    - name: sudo ufw enable
-
 
