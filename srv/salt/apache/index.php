@@ -1,3 +1,3 @@
 Hello World!
 
-<?php print "This is made with PHP!" ?>
+<?php print "This is made with PHP!"; ?>

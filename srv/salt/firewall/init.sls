@@ -4,13 +4,13 @@
 
 /etc/ufw/user.rules:
   file.managed:
-    - source: salt://ssh/user.rules
+    - source: salt://firewall/user.rules
 
 # Replacing default rules with our own
 
 /etc/ufw/user6.rules:
   file.managed:
-    - source: salt://ssh/user6.rules
+    - source: salt://firewall/user6.rules
 
 # Start firewall
 
