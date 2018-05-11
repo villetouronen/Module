@@ -32,7 +32,7 @@ install_ssh:
 
 start_firewall:
   cmd.run:
-    - name: ufw enable
+    - name: sudo ufw enable
 
 # Restart SSH if changes are made to the config file
 
