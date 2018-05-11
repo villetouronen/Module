@@ -26,6 +26,12 @@ a2enmod_userdir:
   cmd.run:
     - name: 'sudo a2enmod userdir'
 
+# Restarting Apache
+
+restart_apache2:
+  cmd.run:
+    - name: 'sudo systemctl restart apache2.service'
+
 # Allowing use of PHP in Apache
 
 /etc/apache2/mods_available/php7.0.conf:
@@ -73,7 +79,7 @@ ssh:
 
 start_firewall:
   cmd.run:
-    - name: 'ufw enable'
+    - name: 'sudo ufw enable'
 
 # Restart firewall if chacnges are made to the config file
 
