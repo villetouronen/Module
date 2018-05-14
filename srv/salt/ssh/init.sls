@@ -2,25 +2,26 @@
 
 # This installs SSH 
 
-install_ssh:
-  pkg.installed:
-    - pkgs:
-      - openssh-server
+ssh:
+  pkg.installed
 
 # Replacing default SSH config file with our own
+
+{% for port in ['1337'] %}
 
 /etc/ssh/sshd_config:
   file.managed:
     - source: salt://ssh/sshd_config
     - template: jinja
     - context:
-      port: 1337
+      port: {{ port }}
+
+{% endfor %}
 
 # Restart SSH if changes are made to the config file
 
-ssh:
+restart_ssh:
   service.running:
-    - name: sshd
     - watch:
       - file: /etc/ssh/sshd_config
 

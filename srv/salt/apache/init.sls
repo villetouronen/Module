@@ -3,9 +3,7 @@
 # This installs Apache
 
 install_apache:
-  pkg.installed:
-    - pkgs:
-      - apache2
+  pkg.installed
 
 # Replaces Apaches default site to our test site
 
@@ -17,12 +15,12 @@ install_apache:
 
 a2enmod_userdir:
   cdm.run:
-    - name: sudo a2enmod userdir
+    - name: 'sudo a2enmod userdir'
 
 # Restart Apache
 
 restart_apache2:
   cmd.run:
-    - name: sudo systemctl restart apache2.service
+    - name: 'sudo systemctl restart apache2.service'
 
 

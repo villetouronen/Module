@@ -1,28 +1,29 @@
+# Made by Ville Touronen May 2018
+
 # Firewall configuration
 
-# Replacing default rules with our own
+# Allowing port 22 on firewall
 
-/etc/ufw/user.rules:
-  file.managed:
-    - source: salt://firewall/user.rules
+allow_firewall:
+  cmd.run:
+    - name: 'sudo ufw allow 22/tcp'
 
-# Replacing default rules with our own
+# Allowing port 80 on firewall
 
-/etc/ufw/user6.rules:
-  file.managed:
-    - source: salt://firewall/user6.rules
+allow_firewall2:
+  cmd.run:
+    - name: 'sudo ufw allow 80/tcp'
+
+# Allowing port 1337 on firewall        
+
+allow_firewall2:
+  cmd.run:
+    - name: 'sudo ufw allow 1337/tcp'
+
 
 # Start firewall
 
-start_firewall:
+enable_firewall:
   cmd.run:
-    - name: sudo ufw enable
+    - name: 'sudo ufw enable'
 
-# Restart firewall if changes are made to the config file
-
-firewall_restart:
-  service.running:
-    - name: ufw
-    - watch:
-      - file: /etc/ufw/user.rules
-      - file: /etc/ufw/user6.rules

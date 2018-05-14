@@ -17,5 +17,5 @@ install_php:
 
 service_apache2:
   cmd.run:
-    - name: sudo systemctl restart apache2.service
+    - name: 'sudo systemctl restart apache2.service'
 
