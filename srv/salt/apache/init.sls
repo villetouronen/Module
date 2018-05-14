@@ -9,29 +9,20 @@ install_apache:
 
 # Replaces Apaches default site to our test site
 
-/var/www/html/index.php:
+/var/www/html/index.html:
   file.managed:
     - source: salt://apache/index.php
 
 # Enable user directories and sites
 
-/etc/apache2/mods-enabled/userdir.conf:
-  file.symlink:
-    - target: ../mods-enabled/userdir.conf
+a2enmod_userdir:
+  cdm.run:
+    - name: sudo a2enmod userdir
 
-/etc/apache2/mods-enabled/userdir.load:
-  file.symlink:
-    - target: ../mods-enabled/userdir.load
-
-
-# Restart Apache if configuration files are changed
+# Restart Apache
 
 restart_apache2:
-  service.running:
-    - name: apache2
-    - watch:
-      - file: /etc/apache2/mods-enabled/userdir.conf
-      - file: /etc/apache2/mods-enabled/userdir.load
-
+  cmd.run:
+    - name: sudo systemctl restart apache2.service
 
 
