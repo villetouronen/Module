@@ -93,7 +93,7 @@ Seuraavaksi loin vielä tuonne moduulin juureen kaksi bash scriptiä. Toinen scr
 
 Toinen scripti taas valmistelee ajettavan kohteen valmiiksi moduulin ajoa varten ja lopuksi suorittaa tuon edellisen scriptin. Käytin tässä scriptissä
 pohjana Tero Karvisen sirotinta, joka löytyy seuraavasta osoitteesta: 
-[https://github.com/terokarvinen/sirotin/blob/master/run.sh] Oma scriptini näyttää seuraavalta.
+https://github.com/terokarvinen/sirotin/blob/master/run.sh Oma scriptini näyttää seuraavalta.
 
 	#!/bin/bash
 	# Original by Tero Karvinen Copyright 2018 Tero Karvinen http://TeroKarvinen.com GPL 3
@@ -125,10 +125,10 @@ Tämä vaihe kestää kauan, koska se asentaa monia ohjelmia, mutta kärsivälli
 
 	Summary for local
 	-------------
-	Succeeded: 15 (changed=15)
+	Succeeded: 16 (changed=16)
 	Failed:     0
 	-------------
-	Total states run:      15
+	Total states run:      16
 
 Eli lopulta saimme moduulin toimimaan ja asensimme sen pelkästään kahta komentoa käyttäen.
 
@@ -137,7 +137,7 @@ Eli lopulta saimme moduulin toimimaan ja asensimme sen pelkästään kahta komen
 
 Liitän vielä lopuksi linkin kuvaan jossa näkyy jokainen asennettu ohjelma, jolla on graafinen käyttöliittymä.
 
-	[]	
+	https://haagahelia-my.sharepoint.com/:i:/g/personal/a1700401_myy_haaga-helia_fi/EYng0Zn4QnJPvb4s-8H6M-cB0MgZ1yfmw08nT555IjhOKg?e=QjMeSD	
  
 ## c) Käyttäjätarina (user story): ketkä ovat modulisi käyttäjät? Mitä he haluavat saada aikaan modulillasi? Missä tilanteessa he sitä käyttävät? Mitkä ovat tärkeimmät parannukset käyttäjän kannalta, joita moduliin pitäisi vielä tehdä? Tähän c-kohtaan vain sanallinen vastaus, tämä kohta ei poikkeuksellisesti edellytä testejä tietokoneella.
 
