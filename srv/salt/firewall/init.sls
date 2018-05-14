@@ -16,7 +16,7 @@ allow_firewall2:
 
 # Allowing port 1337 on firewall        
 
-allow_firewall2:
+allow_firewall3:
   cmd.run:
     - name: 'sudo ufw allow 1337/tcp'
 

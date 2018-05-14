@@ -22,6 +22,7 @@ ssh:
 
 restart_ssh:
   service.running:
+    - name: 'sshd'
     - watch:
       - file: /etc/ssh/sshd_config
 

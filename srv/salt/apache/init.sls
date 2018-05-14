@@ -1,8 +1,8 @@
-# Made by Ville Touronen May 2018
+# Original by Tero Karvinen Copyright 2018 Tero Karvinen http://TeroKarvinen.com GPL 3
 
 # This installs Apache
 
-install_apache:
+apache2:
   pkg.installed
 
 # Replaces Apaches default site to our test site
@@ -13,14 +13,21 @@ install_apache:
 
 # Enable user directories and sites
 
-a2enmod_userdir:
-  cdm.run:
-    - name: 'sudo a2enmod userdir'
+/etc/apache2/mods-enabled/userdir.conf:
+  file.symlink:
+    - target: ../mods-available/userdir.conf
+
+/etc/apache2/mods-enabled/userdir.load:
+  file.symlink:
+    - target: ../mods-available/userdir.load
 
 # Restart Apache
 
-restart_apache2:
-  cmd.run:
-    - name: 'sudo systemctl restart apache2.service'
+serviceapache2:
+  service.running:
+    - name: apache2
+    - watch:
+      - file: /etc/apache2/mods-enabled/userdir.conf
+      - file: /etc/apache2/mods-enabled/userdir.conf
 
 
